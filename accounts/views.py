@@ -4,6 +4,10 @@ from django.contrib.auth.models import User
 
 # Create your views here.
 def logout(request):
+    if request.method == 'POST':
+        auth.logout(request)
+        messages.success(request, 'You are successfully logged out')
+        return redirect('home')
     return redirect('home')
 
 def login(request):
