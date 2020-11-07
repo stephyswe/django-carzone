@@ -3,3 +3,4 @@ django-ckeditor
 django-multiselectfield
 pillow
 psycopg2
+django-allauth
