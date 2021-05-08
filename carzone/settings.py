@@ -27,7 +27,7 @@ SECRET_KEY = '=*t+g)32(&jolq52s^2%$zd$pa5n^dbr4m^a!k%b%m&7^+2el+'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['djangocarzoneapp.herokuapp.com']
+ALLOWED_HOSTS = ['djangocarzoneapp.herokuapp.com', '127.0.0.1']
 
 
 # Application definition
@@ -99,8 +99,15 @@ WHITENOISE_MIMETYPES = {
     }
 } """
 
-DATABASES = {'default': dj_database_url.config(
-    default='postgres://postgres:Appa1234@localhost/carzone_db')}
+""" DATABASES = {'default': dj_database_url.config(
+    default='postgres://postgres:Appa1234@localhost/carzone_db')} """
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+    }
+}
 
 
 # Password validation
@@ -139,7 +146,7 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 STATIC_URL = '/static/'
 
 STATICFILES_DIRS = [
