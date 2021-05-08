@@ -27,7 +27,7 @@ SECRET_KEY = '=*t+g)32(&jolq52s^2%$zd$pa5n^dbr4m^a!k%b%m&7^+2el+'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['djangocarzoneapp.herokuapp.com']
 
 
 # Application definition
